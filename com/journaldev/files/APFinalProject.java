@@ -17,6 +17,8 @@ public class APFinalProject {
             System.out.println(output);
         }
 
+
+
         private String getUrlContents(String theUrl)
         {
             StringBuilder content = new StringBuilder();
