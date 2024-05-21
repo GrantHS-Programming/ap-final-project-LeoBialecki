@@ -1,25 +1,43 @@
 package com.journaldev.files;
-import java.util.Scanner;
-import java.net.*;
-import java.io.*;
-
+import javax.swing.*;
+import java.awt.*;
 
 
 public class APFinalProject {
-    public static void main(String[] args){new APFinalProject();}
 
-    public APFinalProject(){
-        System.out.println("Welcome to Currency Converter!");
+    static JFrame board = new JFrame("Pong");
 
-        System.out.println();
-    }
-
-
-    public void callAPI extends UrlConnectionReader(){
-
+    public static void main(String[] args) {
+        board.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        board.setSize(650,495);
+        Pong pongGame = new Pong();
+        board.add(pongGame);
+        board.setVisible(true);
 
     }
 
-    Scanner myScanner = new Scanner(System.in);
+    public APFinalProject() {
 
+    }
+
+    public class Ball {
+        private int x, y, cx, cy, speed, size;
+        private Color color;
+
+        public Ball(int x,int y,int cx,int cy,int speed, Color color,int size){
+            this.x = x;
+            this.y = y;
+            this.cx = cx;
+            this.speed = speed;
+            this.color = color;
+            this.size = size;
+        }
+
+        public void paint(Graphics g){
+            g.setColor(color);
+            g.fillOval(x,y,size,size);
+        }
+
+
+    }
 }
