@@ -1,6 +1,10 @@
 package com.journaldev.files;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
 
 
 public class APFinalProject {
@@ -15,6 +19,15 @@ public class APFinalProject {
         board.setVisible(true);
 
     }
+
+    Timer timer = new Timer(33, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            game.repaint();
+        }
+    });
+
+    timer.start();
 
     public APFinalProject() {
 

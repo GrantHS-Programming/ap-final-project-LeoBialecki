@@ -19,6 +19,12 @@ public class Ball {
         g.fillOval(x,y,size,size);
     }
 
+    public void moveBall(){
+        x += cx;
+        y += cy;
+    }
+
+
 
 
 
