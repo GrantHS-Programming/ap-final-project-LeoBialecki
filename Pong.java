@@ -12,6 +12,8 @@ public class Pong extends JPanel {
 
     public Pong(){
         gameBall = new Ball(300, 200,3,3,3, Color.YELLOW, 10);
+        Paddle userPaddle = new Paddle(10, 200, 75, 3, Color.BLUE);
+        Paddle pcPaddle = new Paddle(610,200,75,3, Color.RED);
     }
 
     public void paintComponent(Graphics g){
@@ -20,11 +22,16 @@ public class Pong extends JPanel {
 
         gameBall.paint(g);
 
+        userPaddle.paint(g);
+
+        pcPaddle.paint(g);
+
 
     }
 
     public void gameLogic(){
         gameBall.moveBall();
+        gameBall.bounceOffEdges(0, WINDOW_HEIGHT);
     }
 
 
